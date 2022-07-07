@@ -2,7 +2,7 @@ use rusthms::algorithms::bubble_sort::sort;
 
 #[test]
 fn it_sort_array() {
-    //declaring unsorting array of len 5
+    //declaring unsorted array of len 5
     let mut arr = [5, 4, 3, 2, 1];
 
     //calling bubble sort function on unsorted array
