@@ -17,12 +17,12 @@ pub fn it_dfs_path_through_graph() {
         vec![2, 3],
     ];
 
-    // Declaring an array of len 6
-    let mut path = vec![];
+    // Initializing a vector of booleans to mark visited vertices
+    let mut vis = vec![false; 6];
 
     // Calling dfs function on the graph
-    dfs(&mut vec, &mut vec![false; 6], 5, &mut path);
+    dfs(&mut vec, &mut vis, 5);
 
     // Asserting that the graph is traversed in the correct order
-    assert_eq!(vec![5, 2, 0, 3, 1, 4], path);
+    assert_eq!(vec![true; 6], vis);
 }
