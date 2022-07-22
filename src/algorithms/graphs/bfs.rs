@@ -8,8 +8,8 @@ pub fn bfs(adj: &Vec<Vec<usize>>, vis: &mut Vec<bool>, s: usize) {
     while !q.is_empty() {
         let u = q.pop_front().unwrap();
         vis[u] = true;
-        for i in 0..adj[u].len() {
-            let v = adj[u][i];
+        for v in adj[u].iter() {
+            let v = *v;
             if !vis[v] {
                 q.push_back(v);
             }
