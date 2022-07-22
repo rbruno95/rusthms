@@ -1,4 +1,3 @@
-// linked list node struct
 pub struct Node<T> {
     pub data: T,
     pub next: Option<Box<Node<T>>>,
@@ -15,6 +14,7 @@ pub struct LinkedList<T> {
     pub size: usize,
 }
 
+#[allow(dead_code)]
 impl<T> LinkedList<T> {
     pub fn new() -> Self {
         LinkedList {
