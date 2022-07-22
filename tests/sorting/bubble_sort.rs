@@ -1,7 +1,7 @@
-use rusthms::algorithms::bubble_sort::sort;
+use rusthms::algorithms::sorting::bubble_sort::sort;
 
 #[test]
-fn it_sort_array() {
+pub fn it_sort_array() {
     //declaring unsorted array of len 5
     let mut arr = [5, 4, 3, 2, 1];
 
