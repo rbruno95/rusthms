@@ -2,6 +2,7 @@ use rusthms::algorithms::math::sum;
 
 #[test]
 pub fn it_sum_first_n_natural_numbers() {
+    assert_eq!(0, sum::sum_first_n_natural_numbers(0));
     assert_eq!(1, sum::sum_first_n_natural_numbers(1));
     assert_eq!(3, sum::sum_first_n_natural_numbers(2));
     assert_eq!(6, sum::sum_first_n_natural_numbers(3));
@@ -12,4 +13,8 @@ pub fn it_sum_first_n_natural_numbers() {
     assert_eq!(36, sum::sum_first_n_natural_numbers(8));
     assert_eq!(45, sum::sum_first_n_natural_numbers(9));
     assert_eq!(55, sum::sum_first_n_natural_numbers(10));
+    assert_eq!(30628, sum::sum_first_n_natural_numbers(247));
+    assert_eq!(761995, sum::sum_first_n_natural_numbers(1234));
+    assert_eq!(59631757185, sum::sum_first_n_natural_numbers(345345));
+    assert_eq!(500000500000, sum::sum_first_n_natural_numbers(1000000));
 }
