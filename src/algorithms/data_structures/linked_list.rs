@@ -1,7 +1,13 @@
 // linked list node struct
 pub struct Node<T> {
-    pub data: Option<Box<T>>,
+    pub data: T,
     pub next: Option<Box<Node<T>>>,
+}
+
+impl<T> Node<T> {
+    pub fn new(data: T) -> Node<T> {
+        Node { data, next: None }
+    }
 }
 
 pub struct LinkedList<T> {
@@ -10,15 +16,21 @@ pub struct LinkedList<T> {
 }
 
 impl<T> LinkedList<T> {
-    pub fn add_node(&mut self, node: Node<T>) {
+    pub fn new() -> Self {
+        LinkedList {
+            tail: None,
+            size: 0,
+        }
+    }
+    pub fn add_node(&mut self, data: T) {
         let new_node: Node<T> = Node {
-            data: node.data,
+            data,
             next: self.tail.take(),
         };
         self.tail = Some(Box::new(new_node));
         self.size += 1;
     }
-    pub fn remove_last(&mut self) -> Option<Box<T>> {
+    pub fn remove_last(&mut self) -> T {
         self.tail
             .take()
             .map(|node| {
