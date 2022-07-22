@@ -1,13 +1,13 @@
 #[allow(dead_code)]
-pub fn dfs(adj: &mut Vec<Vec<u32>>, vis: &mut Vec<bool>, cur: usize, res: &mut Vec<u32>) {
-    if vis[cur] {
+pub fn dfs(adj: &mut Vec<Vec<usize>>, vis: &mut Vec<bool>, v: usize, res: &mut Vec<usize>) {
+    if vis[v] {
         return;
     }
-    vis[cur] = true;
-    res.push(cur as u32);
-    for i in 0..adj[cur].len() {
-        if !vis[adj[cur][i] as usize] {
-            dfs(adj, vis, adj[cur][i] as usize, res);
+    vis[v] = true;
+    res.push(v);
+    for u in 0..adj[v].len() {
+        if !vis[adj[v][u]] {
+            dfs(adj, vis, adj[v][u], res);
         }
     }
 }
